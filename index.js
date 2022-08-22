@@ -1,12 +1,15 @@
 const express = require('express')
 const path = require('path');
 const routes = require("./routes/routes")
+const connectToDb = require("./database/db")
 
+connectToDb()
 const app = express()
 const port = 3000
 
 app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")))
+app.use(express.urlencoded())
 app.use(routes)
 
 // rotas
@@ -15,4 +18,7 @@ app.use(routes)
 // })
 
 // porta
-app.listen(3000, () => console.log(`Server running on http://localhost:${port}`))
+app.listen(3000, () => 
+    console.log(`Server running on http://localhost:${port}`)
+)
+

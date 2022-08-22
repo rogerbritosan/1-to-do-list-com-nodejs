@@ -1,0 +1,5 @@
+login: rogerbritosan@gmail.com
+projeto no Mongo Db: todolist-yt
+cluster: todolist
+usuário: root
+senha: admin
